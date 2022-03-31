@@ -1,0 +1,7 @@
+@import './styles/abstract/colors';
+.circle {
+  height: 32px;
+  min-width: 32px;
+  border: 2px solid $secondary-main;
+  border-radius: 16px;
+}

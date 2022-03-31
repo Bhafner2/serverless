@@ -1,0 +1,17 @@
+.margin-0 {
+  margin: 0;
+}
+
+/* prevents a button to display the border when clicked
+ * e.g. the action buttons in plan overview grid */
+.btn.no-focus:focus {
+  box-shadow: none;
+}
+
+.no-pd {
+  padding: 0;
+}
+
+.mt-36 {
+  margin-top: 36px;
+}

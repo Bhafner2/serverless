@@ -1,0 +1,38 @@
+@import '~@biskin-kit/core/src/lib/assets/scss/biskin/colors';
+@import './../abstract/colors';
+
+.planning-tooltip.show {
+  opacity: 1;
+}
+
+.planning-tooltip {
+  .arrow {
+    transform: rotateY(0deg) rotate(45deg);
+    background-color: $white;
+    border-top: 1px solid $deep-carrot-orange;
+    border-left: 1px solid $deep-carrot-orange;
+    left: calc(0.6rem) !important;
+    top: 3px;
+    width: 0.8rem;
+    height: 0.8rem;
+
+    &::before {
+      visibility: hidden;
+    }
+  }
+
+  .tooltip-inner {
+    border: 1px solid $lightgrey-sf-tooltip-border;
+    background-color: $white;
+    color: $black;
+    position: relative;
+    height: 58px;
+    text-align: left;
+
+    .tooltip-headline {
+      font-size: 16px;
+      color: $lightgrey-sf-d14;
+      line-height: 25px;
+    }
+  }
+}

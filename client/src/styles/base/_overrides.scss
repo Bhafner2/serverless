@@ -1,0 +1,19 @@
+@import '~@biskin-kit/core/src/lib/assets/scss/biskin/variables';
+
+* {
+  font-family: $font-family-base;
+  font-weight: 400;
+  color: $text-primary;
+}
+
+[class^='ico-'][class*='disabled'],
+[class*=' ico-'][class*='disabled'] {
+  opacity: 0.4;
+}
+
+.full-width > .tab-pane {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  overflow: hidden;
+}

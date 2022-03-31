@@ -1,0 +1,16 @@
+@import './styles/abstract/colors';
+@import './styles/abstract/variables';
+.app-loading-dialog {
+  .app-loading-dialog__modal-body {
+    background-color: $outer-space;
+    color: $white;
+  }
+  &__title {
+    font-weight: 500;
+  }
+  &__loading-icon {
+    padding-top: 20px;
+    text-align: center;
+    margin: 0 auto;
+  }
+}

@@ -1,0 +1,14 @@
+@import '~css-vars/css-vars';
+
+.breadcrumb {
+  background-color: unset;
+  padding: 0;
+}
+
+.breadcrumb-item {
+  text-transform: uppercase;
+
+  a {
+    color: var(--theme-text-color);
+  }
+}

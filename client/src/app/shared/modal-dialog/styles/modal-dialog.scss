@@ -1,0 +1,93 @@
+@import './styles/abstract/colors';
+@import './styles/abstract/variables';
+
+$modal-border-radius: 25px;
+.app-modal-backdrop {
+  background: $background-modal;
+}
+.app-modal-dialog {
+  &--with-table {
+    .modal-content > * {
+      height: calc(100vh - 80px);
+      display: flex;
+      flex-direction: column;
+    }
+    .modal-footer {
+      padding-top: 30px !important;
+    }
+    .modal-body {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+  .modal-content {
+    padding: 0;
+    border: 0;
+    background-color: transparent;
+    border-radius: 4px;
+    overflow: visible;
+  }
+  .app-modal-dialog__modal-header {
+    border-top-right-radius: $modal-border-radius;
+    border-top-left-radius: $modal-border-radius;
+    background-color: $tertiary-dark;
+    color: $secondary-contrast;
+    flex-direction: row;
+    height: 56px;
+    margin-bottom: 0;
+    padding-left: 22px;
+    .modal-title {
+      flex: 1;
+      background-color: transparent;
+      line-height: 56px;
+      font-size: 20px;
+      color: $secondary-contrast;
+    }
+    .close {
+      margin: 0;
+    }
+    .close-icon {
+      color: $secondary-contrast;
+    }
+  }
+  .app-modal-dialog__modal-body {
+    padding: 22px;
+    font-size: 16px;
+    color: $lightgrey-sf-d14;
+    line-height: 24px;
+    background-color: $secondary-contrast;
+  }
+  .app-modal-dialog__modal-footer .btn-secondary,
+  .app-modal-dialog__modal-footer .btn-primary {
+    font-size: 16px;
+
+    color: $secondary-contrast;
+    border-radius: 2px;
+    padding: 10px 24px;
+    transition: all 0.2s ease-in-out;
+  }
+  .app-modal-dialog__modal-footer {
+    margin-top: 0;
+    padding: 0 22px 15px;
+    justify-content: space-evenly;
+    background-color: $secondary-contrast;
+    border-bottom-right-radius: $modal-border-radius;
+    border-bottom-left-radius: $modal-border-radius;
+
+    .btn-secondary {
+      background-color: $secondary-main;
+      border: 2px solid $secondary-dark;
+      font-weight: 700;
+    }
+    .btn-primary {
+      background-color: $primary-main;
+      border: 2px solid $primary-dark;
+      color: $primary-contrast;
+      font-weight: 700;
+    }
+    .btn.btn-disabled {
+      opacity: 0.7;
+      pointer-events: none;
+    }
+  }
+}

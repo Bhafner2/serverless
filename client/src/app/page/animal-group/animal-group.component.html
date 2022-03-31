@@ -1,0 +1,30 @@
+<section class="section">
+  <div class="col col--60 flex-height">
+    <div class="col-content">
+      <app-grid-table
+        *ngIf="animalGroupAnimals"
+        [data]="animalGroupAnimals"
+        [columnDefs]="animalGroupTableColumnDefs"
+        [config]="animalGroupTableConfig"
+        (actionRow)="onAnimalGroupActionRow($event)"
+      >
+      </app-grid-table>
+    </div>
+  </div>
+  <div class="col col--40 flex-height">
+    <div class="col-content col-content--light">
+      <!-- TODO: replace dummy data with API Call -->
+      <app-stats-table
+        (clickEdit)="showEditModal()"
+        [items]="animalStats"
+        [config]="{
+          header: animalGroup?.name,
+          title: 'animal.statsTitle.GruppenDurchschnitt',
+          comment: animalGroup?.comment,
+          columns: 3,
+          isEditable: true
+        }"
+      ></app-stats-table>
+    </div>
+  </div>
+</section>

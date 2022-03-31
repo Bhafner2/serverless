@@ -1,0 +1,43 @@
+@import 'styles/abstract/colors';
+
+:host {
+  flex-direction: column;
+  overflow: hidden;
+  display: flex;
+  flex: 1;
+}
+
+.title-bg {
+  width: calc(100% - 100px);
+  height: 122px;
+  margin: 30px 0 50px;
+
+  background: #80707a;
+  border-radius: 14px;
+}
+
+.title {
+  font-weight: 900;
+  font-size: 39px;
+  line-height: 33px;
+  color: $tertiary-contrast;
+  text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+
+  padding: 20px 30px;
+}
+
+.subtitle {
+  font-style: normal;
+  font-size: 15px;
+  line-height: 18px;
+  color: $tertiary-contrast;
+
+  padding-bottom: 20px;
+  padding-left: 30px;
+}
+
+.guy {
+  position: absolute;
+  top: 20px;
+  right: 70px;
+}

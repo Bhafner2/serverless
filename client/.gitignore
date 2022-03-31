@@ -1,0 +1,73 @@
+# See http://help.github.com/ignore-files/ for more about ignoring files.
+
+# compiled output
+/dist
+/tmp
+/out-tsc
+/src/*/__build__/
+/__build__/**
+/jest-junit
+
+/src/*/dist/
+/.awcache
+.webpack.json
+/compiled/
+dll/
+temp
+tmp
+webpack-cache
+
+# Runtime data
+pids
+*.pid
+*.seed
+
+# Logs
+logs
+*.log
+
+# dependencies
+/node_modules/
+
+# IDEs and editors
+/.idea
+.project
+.classpath
+.c9/
+*.launch
+.settings/
+*.sublime-workspace
+*.swp
+*.iml
+
+# IDE - VSCode
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+.history/*
+
+# misc
+/.sass-cache
+/connect.lock
+/coverage
+/libpeerconnection.log
+npm-debug.log
+/npm-debug.log.*
+yarn-error.log
+testem.log
+/typings
+
+# profiling files
+chrome-profiler-events.json
+speed-measure-plugin.json
+
+# System Files
+.DS_Store
+Thumbs.db
+ehthumbs.db
+
+# Testing results for jest
+.jest-test-results.json
+

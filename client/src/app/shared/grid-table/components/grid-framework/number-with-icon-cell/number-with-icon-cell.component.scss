@@ -1,0 +1,11 @@
+@import './styles/abstract/colors';
+.text {
+  font-weight: 900;
+  font-size: 18px;
+  line-height: 22px;
+}
+.table-icon {
+  font-size: 28px;
+  color: $text-300;
+  padding-left: 6px;
+}

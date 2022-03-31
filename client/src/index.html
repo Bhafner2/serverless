@@ -1,0 +1,59 @@
+<!--
+@license
+Copyright (c) 2020 Bison Schweiz AG. All rights reserved.
+-->
+
+<!DOCTYPE html>
+<html dir="ltr" lang="de">
+  <head>
+    <meta charset="utf-8" />
+    <title>Futterplan</title>
+
+    <meta name="generator" content="Futterplan" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="My App description" />
+
+    <!--
+      The `<base>` tag below is present to support two advanced deployment options:
+      1) Differential serving. 2) Serving from a non-root path.
+      Instead of manually editing the `<base>` tag yourself, you should generally either:
+      a) Add a `basePath` property to the build configuration in your `polymer.json`.
+      b) Use the `--base-path` command-line option for `polymer build`.
+    -->
+    <base href="/" />
+
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+
+    <!-- See https://goo.gl/OOhYW5 -->
+    <link rel="manifest" href="manifest.webmanifest" />
+
+    <!-- See https://goo.gl/qRE0vM -->
+    <meta name="theme-color" content="#1976d2" />
+
+    <!-- Add to homescreen for Chrome on Android. Fallback for manifest.json -->
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="application-name" content="Futterplan" />
+
+    <!-- Add to homescreen for Safari on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="apple-mobile-web-app-title" content="Futterplan" />
+
+    <!-- Homescreen icons -->
+    <link rel="apple-touch-icon" href="assets/icons/icon-48x48.png" />
+    <link rel="apple-touch-icon" sizes="72x72" href="assets/icons/icon-72x72.png" />
+    <link rel="apple-touch-icon" sizes="96x96" href="assets/icons/icon-96x96.png" />
+    <link rel="apple-touch-icon" sizes="144x144" href="assets/icons/icon-144x144.png" />
+    <link rel="apple-touch-icon" sizes="192x192" href="assets/icons/icon-192x192.png" />
+
+    <!-- Tile icon for Windows 8 (144x144 + tile color) -->
+    <meta name="msapplication-TileImage" content="assets/icons/icon-144x144.png" />
+    <meta name="msapplication-TileColor" content="#3f51b5" />
+    <meta name="msapplication-tap-highlight" content="no" />
+  </head>
+  <body data-theme="sf">
+    <noscript>Please enable JavaScript to view this website.</noscript>
+    <app-root></app-root>
+    <!-- Scripts will be injected by webpack here -->
+  </body>
+</html>

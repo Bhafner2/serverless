@@ -1,0 +1,281 @@
+@import '~css-vars/css-vars';
+@import '~@biskin-kit/core/src/lib/assets/scss/biskin/colors';
+@import 'styles/abstract/colors';
+@import '~ag-grid-community/src/styles/ag-grid';
+@import '~ag-grid-community/src/styles/ag-theme-material/sass/ag-theme-material-mixin';
+
+.ag-theme-material {
+  // hint:
+  // use theme parameters where possible
+  /* stylelint-disable */
+  // prettier-ignore
+  @include ag-theme-material(
+      (
+        // Colour of text and icons in primary UI elements like menus
+        foreground-color: $white,
+        // Colour of text and icons in UI elements that need to be slightly less emphasised to avoid distracting attention from data
+        secondary-foreground-color: $black,
+        // Background colour for all headers, including the grid header, panels etc
+        header-foreground-color: ag-derived(secondary-foreground-color),
+        header-background-color: $tertiary-main,
+        // Background colour applied to every other row or null to use background-color for all rows
+        odd-row-background-color: null,
+        // Background color when hovering over rows in the grid and in dropdown menus, or null for no rollover effect (note - if you want a rollover on one but not the other, set to null and use CSS to achieve the rollover)
+        row-hover-color: $lightgrey-sf,
+        // Rollover colour for header cells
+        header-cell-hover-background-color: null,
+        //
+        // THEME OPTIONS
+        //
+        material-primary-color: $yellow-sf,
+        material-accent-color: $yellow-sf-d2,
+        //
+        // BORDERS
+        //
+        // Draw borders around most UI elements
+        borders: false,
+        // Colour of the border between grid rows, or null to display no border
+        row-border-color: $white,
+        // Default border for cells. This can be used to specify the border-style and border-color properties e.g. `dashed red` but the border-width is fixed at 1px.
+        cell-horizontal-border: null,
+        // Separator between columns in the header. Displays between all header cells For best UX, use either this or header-column-resize-handle but not both
+        header-column-separator: true,
+        header-column-separator-height: 100%,
+        header-column-separator-width: 1px,
+        header-column-separator-color: ag-derived(border-color, $opacity: 0.9),
+        // Visible marker for resizeable columns. Displays in the same position as the column separator, but only when the column is resizeable. For best UX, use either this or header-column-separator but not both
+        header-column-resize-handle: true,
+        header-column-resize-handle-height: 50%,
+        header-column-resize-handle-width: 1px,
+        header-column-resize-handle-color: ag-derived(border-color, $opacity: 0.5),
+        //
+        // INPUTS
+        //
+        input-border-color: null,
+        input-focus-border-color: null,
+        //
+        // SIZING / PADDING / SPACING
+        //
+        // grid-size is the main control for affecting how tightly data and UI elements are packed together. All padding and spacing in the grid is defined as a multiple of grid-size, so increasing it will make most components larger by increasing their internal white space while leaving the size of text and icons unchanged.
+        grid-size: 8px,
+        // The size of square icons and icon-buttons
+        icon-size: 18px,
+        // Horizontal padding for grid and header cells (vertical padding is not set explicitly, but inferred from row-height / header-height
+        cell-horizontal-padding: ag-derived(grid-size, $times: 2),
+        // Height of grid rows
+        row-height: ag-derived(grid-size, $times: 9),
+        // Height of header rows
+        header-height: ag-derived(grid-size, $times: 3, $plus: 1),
+        // Fonts
+        font-size: 18px,
+        // The name of the font family you're using
+        icon-font-family: 'agGridMaterial',
+        // A URI (data: URI or web URL) to load the icon font from. NOTE: if your icon font is already loaded in the app's HTML page
+        // set this to null to avoid embedding unnecessary font data in the compiled theme.
+        icons-data:
+        url('data:application/font-woff;charset=utf-8;base64,AAEAAAALAIAAAwAwT1MvMg8SBlYAAAC8AAAAYGNtYXAXVtK8AAABHAAAAFRnYXNwAAAAEAAAAXAAAAAIZ2x5ZpP+hrsAAAF4AAAZIGhlYWQXIJanAAAamAAAADZoaGVhB4kD+wAAGtAAAAAkaG10eN4AKAUAABr0AAAA6GxvY2Gzpq0+AAAb3AAAAHZtYXhwAEQAlQAAHFQAAAAgbmFtZZlKCfsAABx0AAABhnBvc3QAAwAAAAAd/AAAACAAAwP3AZAABQAAApkCzAAAAI8CmQLMAAAB6wAzAQkAAAAAAAAAAAAAAAAAAAABEAAAAAAAAAAAAAAAAAAAAABAAADpNQPA/8AAQAPAAEAAAAABAAAAAAAAAAAAAAAgAAAAAAADAAAAAwAAABwAAQADAAAAHAADAAEAAAAcAAQAOAAAAAoACAACAAIAAQAg6TX//f//AAAAAAAg6QD//f//AAH/4xcEAAMAAQAAAAAAAAAAAAAAAQAB//8ADwABAAAAAAAAAAAAAgAANzkBAAAAAAEAAAAAAAAAAAACAAA3OQEAAAAAAQAAAAAAAAAAAAIAADc5AQAAAAABAQAAawMAAxUACwAAASEVCQEVITUhNychAwD+AAEV/usCAP7V1tYBKwMVVf8A/wBVgNXVAAAAAAQAOf/5A8cDhwAGAA0AFAAbAAABMzUzJwczByM1Bxc1MyUnFSMVMxUnIxUjFzcjAauqcsfHcjlyx8dyAlXHcnKrqnLHx3ICTnLHx6tyx8dyVcdyqnI5csfHAAAAAQEpAJkC1wLnAAgAAAEHJzcXBycRIwHgiS7X1y6JQAJsiS3X1y2J/i0AAAACAFUAFQOrA2sAMAA8AAABIgYHDgEHDgEHDgEVFBYXHgEXHgEXHgEzMjY3PgE3PgE3PgE1NCYnLgEnLgEnLgEjEwcnByc3JzcXNxcHAgAsUycnRB0dLREREREREC4dHUQnJ1MsLFMnJ0QdHS0RERERERAuHR1EJydTLNU8mZk8mZk8mZk8mQNrEREQLh0dRCcnUywsUycnRB0dLREREREREC4dHUQnJ1MsLFMnJ0QdHS0RERH9vDyZmTyZmTyZmTyZAAAAAwDVAJUDKwLrAAMABwALAAATMxEjEzMRIxMzESPVgIDveHjveHgCN/5eAlb9qgEA/wAAAAIAgABAA4ADQAAbACEAAAEhIgYHDgEVERQWFx4BMyEyNjc+ATURNCYnLgEBJzcXARcDK/2qER4NDQwMDQ0eEQJWER4NDQwMDQ0e/m/WPJoBRDwDQAwNDR4R/aoRHg0NDAwNDR4RAlYRHg0NDP2r1TyZAUQ8AAAAAAIAgABAA4ADQAAbAB8AAAEhIgYHDgEVERQWFx4BMyEyNjc+ATURNCYnLgEDITUhAyv9qhEeDQ0MDA0NHhECVhEeDQ0MDA0NHmf+VgGqA0AMDQ0eEf2qER4NDQwMDQ0eEQJWER4NDQz+VVYAAAIAgABAA4ADQAADAB8AAAERIRElISIGBw4BFREUFhceATMhMjY3PgE1ETQmJy4BAyv9qgJW/aoRHg0NDAwNDR4RAlYRHg0NDAwNDR4C6/2qAlZVDA0NHhH9qhEeDQ0MDA0NHhECVhEeDQ0MAAMAcwBIA40DOAAFAAgAHAAACQEHFwkBAzcXFwcOARUUFhceATMyNjc+ATU0JicC/f5VPGb+9wFFzMzMtCoWFQwNDR4RER4NDQwVFQGNAas8Zv73/rsBRc3NQDUbMBURHg0NDAwNDR4RFTAaAAIAqwBrAVUDFQADAAcAACUjETM1FSM1AVWqqqprAf+rV1cAAAkAqwBrA1UDFQADAAcACwAPABMAFwAbAB8AIwAAEzM1IwEzNSMFMzUjNTM1IwUzNSMBFTM1BTM1IwEzNSMRMzUjq6qqAQCqqv8AqqqqqgEAqqoBAKr+VqqqAQCqqqqqAmuq/VaqqqpWqqqqAQCqqqqq/laq/laqAAEBYgDAAp4CwAAFAAABJwkBNycCnjz/AAEAPMMChDz/AP8APMQAAAADAGv/6wOVA5UACwAoACwAAAEhIgYHDgEVETMRIRchIgYHDgEVERQWFx4BMyEyNjc+ATURNCYnLgEjESERIQLA/gARHg0NDFUCAID+KxIeDQ0MDA0NHhIB1REeDQ0MDA0NHhH+KwHVA5UMDQ0eEf2rAlVVDA0NHhL9qxEeDQ0MDA0NHhECVRIeDQ0M/VUCVQABANUAlQMrAusACwAAAScHJwcXBxc3FzcnAys87+887+887+887wKvPO/vPO/vPO/vPO8ABQBVABUDqwNrAEMAXAB1AI0AkgAAAT4BNz4BNTQmJy4BIyIGBw4BFRQWFx4BMzI2Nz4BNxcHLgEnLgEjIgYHDgEVFBYXHgEzMjY3PgE1NCYnLgEnNwEzNQEHIiYnLgE1NDY3PgEzMhYXHgEVFAYHDgEjESImJy4BNTQ2Nz4BMzIWFx4BFRQGBw4BIwEiJicuATU0Njc+ATMyFhceARUUBgcOAQkBFwE1AZsEBgICAhkZGTwkIz0ZGRkZGRk9IwoSCQgRCGVlCBEICRIKIz0ZGRkZGRk9IyQ8GRkZAgICBgRlASuA/fCbER4NDQwMDQ0eEREeDQ0MDA0NHhERHg0NDAwNDR4RER4NDQwMDQ0eEQEABAgDAwMDAwMHBQQIAwMDAwMDBwEm/wBVASsCeggRCAkSCiM9GRkZGRkZPSMkPBkZGQICAgYEZWUEBgICAhkZGT0jJDwZGRkZGRk8JAkTCAkRCGX+1SsCDw8MDA0eEhIeDA0MDA0MHhISHg0MDP4ADAwNHhISHgwNDAwNDB4SEh4NDAwBQAMDAwcFBAgDAwMDAwMIBAUHAwMDAZX/AFUBKisAAAcAlwC/A2kCwQAYABwANQA5AFEAagBuAAATIgYHDgEVFBYXHgEzMjY3PgE1NCYnLgEjBTUhFQMiBgcOARUUFhceATMyNjc+ATU0JicuASMFITUhBTIWFx4BFRQGBw4BIyImJy4BNTQ2Nz4BNzIWFx4BFRQGBw4BIyImJy4BNTQ2Nz4BMwUhNSHCCQ8GBwYGBgcPCQkPBgcGBgYHDwkCp/3XfgkPBgcGBgYHDwkJDwYHBgYGBw8JAdL+rAFU/i4HCwQFBQUEBQsHBwsEBQUFBAULBwkPBgcGBgYHDwkJDwYHBgYGBw8JAqf91wIpARUGBgcPCQgPBwcGBgcHDwgJDwYHBlVWVgErBgYHDwkJDwYHBgYGBw8JCQ8GBwZVVQsFBAULBwcLBAUFBQQFCwcHCwQFBeEGBwcPCAkPBgcGBgYHDwkIDwcHBlZVAAAAAQEpAJkC1wLnAA0AAAE3HgEXHgEXByc3FxEzAiCJBgwFBQwG19cuiUABFIkFDAUGDAXX1y2JAdMAAAAAAQFiAMACngLAAAUAAAEHFwcXAQGePMPDPAEAAsA8xMQ8AQAAAQCTAMcDbQK5AH0AAAEuAScuASMiBgcOAQcnPgE3PgEzMhYXHgEXHgEXHgEXDgEHDgEHJz4BNz4BNyMOAQcOAQcnIxciBiMGIiMiJicuAScjHgEXHgEzMjY3PgE3Fw4BBw4BIyImJy4BJy4BJy4BJz4BNz4BNxcOAQcOAQczJz4BNz4BMzIWFx4BFwKjBRwXFzYeESAQDxoLTxUvGBk0Gx87HRw1FxgqEhIdCwwiFhYzHE8JDwYGCANEAgUEAwcEK1BGAgQDAgUCER4ODRIERAUcFxc2HwkTCAkRCEgRIhIRJRMfPBwdNBgXKhITHQoJGRAPJBReAgUBAgIBhikHDwkJEwsRHg0NEQUB3R0xFBMUBgcGEgxPDRMHBwcJCgkZERAoFxYyHB84GRopEU8JFAwLGA0GCwUGCQUqRgEBCgsKGg8dMRQUFAICAgYESAYKBAMECgkJGhARJxcXMhsYLRUVJRBeBQoFBQsFKgcKBAQECgoKGRAAAAMAkwDHA20CuQAwAEkAYQAAASIGBw4BBw4BBw4BBx4BFx4BFx4BFx4BMzI2Nz4BNz4BNz4BNy4BJy4BJy4BJy4BIxEiJicuATU0Njc+ATMyFhceARUUBgcOASMRIgYHDgEVFBYXHgEzMjY3PgE1NCYnLgECAB87HRw1FxgqEhMcCwodExIqFxg0HRw8Hx87HRw1FxgqEhMcCwodExIqFxg0HRw8HyI7GBkYGBgZOiMiOxgZGBgYGTojFCQODw8PDg8kFBQkDg8PDw4PJAK5CQoJGREQKBcWMhwcMRcXJxEQGgkKCQkKCRkRECgXFjIcHDEXFycREBoJCgn+YRgYGTojIjsYGRgYGBk6IyI7GBkYAQoPDg8kFBQkDg8PDw4PJBQUJA4PDwAAAwCAAMADgALAAAMABwALAAAlMzUjARUhNQEhNSEBq6qq/tUDAP2AAgD+AMBVAatVVf7VVgAAAAACAPcAwAMJAsAABQAJAAAlJzcnCQEBMxEjAwnExDz/AAEA/ipWVvzExDz/AP8AAgD+AAAAAgCrAUADVQJAAAMABwAAASEVIQUhNSEDVf1WAqr9VgKq/VYCQFWrVQAAAAAGAI4ApANyAtwACAAMABUAGQAdACUAAAEhFAYHDgErAQEVITU3MhYXHgEVITUTIzUzNSM1MycjNDY3PgEzAlUBHRERECkXqwEd/uOrFykQERH+AHJycnJy5HIRERApFwEVFygREBEBVXJy4xARECkXcf3IcXJychcoERARAAAAAAIAkwDHA20CuQAwAEkAAAEiBgcOAQcOAQcOAQceARceARceARceATMyNjc+ATc+ATc+ATcuAScuAScuAScuASMRIiYnLgE1NDY3PgEzMhYXHgEVFAYHDgEjAgAfOx0cNRcYKhITHAsKHRMSKhcYNB0cPB8fOx0cNRcYKhITHAsKHRMSKhcYNB0cPB8iOxgZGBgYGTojIjsYGRgYGBk6IwK5CQoJGREQKBcWMhwcMRcXJxEQGgkKCQkKCRkRECgXFjIcHDEXFycREBoJCgn+YRgYGTojIjsYGRgYGBk6IyI7GBkYAAIA9wDAAwkCwAAFAAkAABMXBxcJASEzESP3xMQ8AQD/AAGAVlYChMTEPAEAAQD+AAAAAAABAKsAawNVAxUACAAAASE3JwkBNychA1X9+e89/qsBVTzuAgcB6+48/qv+qzzuAAACAOQApAMcAtwAFwAgAAABNxcHMxUjFwcnFSM1Byc3IzUzJzcXNTMDMzc1JyMHFRcCOWhQaJOTaFBocmhQaJOTaFBocmheQ0NeQyECSWhQaHJoUGiTk2hQaHJoUGiT/nJDXkNDXiEAAAEAgALrA4ADQAADAAATIRUhgAMA/QADQFUAAAADAIAAwAOAAsAAAwAHAAsAADchNSE1ITUhNRUhNYADAP0AAwD9AAMAwFWAVtVVVQABAQAAQAMAAJUAAwAAJSEVIQEAAgD+AJVVAAAAAQDVAZUDKwHrAAMAABMhFSHVAlb9qgHrVgAAAAEBYgDAAp4CwAAFAAABBxcHFwEBnjzDwzwBAALAPMTEPAEAAAIAQACgA8AC4AANABsAAAE3HgEXHgEXByc3FxEzASMRByc3HgEXHgEXBycBQZAGDAUGDAbg4C+QQgHAQpAv4Bw4HBw4HC+QARiGBgsFBgsF0tIshgHI/cAByIYs0ho0Gxo1GiyGAAAAAwBVABUDqwNrADAASwBlAAABIgYHDgEHDgEHDgEVFBYXHgEXHgEXHgEzMjY3PgE3PgE3PgE1NCYnLgEnLgEnLgEjATQ2Nz4BNz4BNz4BMzIWFx4BFwEuAScuATUxASImJy4BJwEeARceARUUBgcOAQcOAQcOASMCACxTJydEHR0tEREREREQLh0dRCcnUywsUycnRB0dLREREREREC4dHUQnJ1Ms/qsNDQ4kGBc2Hx9DIx05GhsxFf4iERoKCgkBVR05GhsxFQHeERoKCgkNDQ0lFxg2Hx9CJANrEREQLh0dRCcnUywsUycnRB0dLREREREREC4dHUQnJ1MsLFMnJ0QdHS0RERH+VSNDHx82FxgkDg0NCQoKGhH+IhUxGhs5Hf6rCQoKGhEB3hUxGhs5HSNDHx82FxgkDg0NAAMAgP/rA4ADlQAqAEIASgAAASMuAScuASMiBgcOAQcjIgYHDgEVERQWFx4BMyEyNjc+ATURNCYnLgEjMSEyFhceARUUBgcOASMiJicuATU0Njc+AQEhETMVITUzAyuzBhcQESUVFSUQERYHsxEeDQ0MDA0NHhECVhEeDQ0MDA0NHhH+1QkPBwYGBgYHDwkJDwYHBgYHBg8BNP2qVgGqVgNAEx4MDAwMDAweEwwNDR4R/VURHg0NDAwNDR4RAqsRHg0NDAYGBw8JCA8GBwYGBwYPCAkPBgcG/QACq4CAAAAAAgCtAG8DUwMRAAQAEAAAJQcnNxcTAQcnBxcHJzcXNycBY44ojhTQATQfHvc+WPZYPXse/Y4ojhQCAP7MHh57PVj2WD73HgAACQA5//kDxwOHABsAHwAjAC8ANAA6AD4AQgBGAAAFISImJy4BNRE0Njc+ATMhMhYXHgEVERQGBw4BASMVMwEhESElBxcHJzceARceARcnIxUzNQUHJwcnNwEjFTMlIxUzNyMVMwNV/VYXKRARERERECkXAqoXKRARERERECn96aqqAgD+OQHH/txCQilpaQUKBQYKBdyqqgH4KEFCKGr+caqqAR3k5OOqqgcREBEoGAKqFykQERERERApF/1WGCgQEREBHKoBjv5ys0JBKGlqBQoFBQoF26ureihBQShpAS2qqqqqqgAAAAEA1QCVAysC6wALAAABIREjESE1IREzESEDK/8AVv8AAQBWAQABlf8AAQBWAQD/AAAAAAABAWIAwAKeAsAABQAAAScJATcnAp48/wABADzDAoQ8/wD/ADzEAAAAAgBVABUDqwNrADAAYQAAASIGBw4BBw4BBw4BFRQWFx4BFx4BFx4BMzI2Nz4BNz4BNz4BNTQmJy4BJy4BJy4BIxEiJicuAScuAScuATU0Njc+ATc+ATc+ATMyFhceARceARceARUUBgcOAQcOAQcOASMCACxTJydEHR0tEREREREQLh0dRCcnUywsUycnRB0dLREREREREC4dHUQnJ1MsI0MfHzYXGCQODQ0NDQ4kGBc2Hx9DIyNDHx82FxgkDg0NDQ0OJBgXNh8fQyMDaxEREC4dHUQnJ1MsLFMnJ0QdHS0RERERERAuHR1EJydTLCxTJydEHR0tERER/QANDQ0lFxg2Hx9CJCNDHx82FxgkDg0NDQ0OJBgXNh8fQyMkQh8fNhcYJA4NDQADAFUAFQOrA2sAMABhAJIAAAEiBgcOAQcOAQcOARUUFhceARceARceATMyNjc+ATc+ATc+ATU0JicuAScuAScuASM1IgYHDgEHDgEHDgEVFBYXHgEXHgEXHgEzMjY3PgE3PgE3PgE1NCYnLgEnLgEnLgEjESImJy4BJy4BJy4BNTQ2Nz4BNz4BNz4BMzIWFx4BFx4BFx4BFRQGBw4BBw4BBw4BIwIAFikUEyMODhcJCAgICAkXDg4iFBMqFhYpFBMjDg4XCQgICAgJFw4OIhQTKhYsUycnRB0dLREREREREC4dHUQnJ1MsLFMnJ0QdHS0RERERERAuHR1EJydTLCNDHx82FxgkDg0NDQ0OJBgXNh8fQyMjQx8fNhcYJA4NDQ0NDiQYFzYfH0MjApUICAgXDw4iFBMqFhYpFBMiDw4XCQgICAgJFw4PIhMUKRYWKhMUIg4PFwgICNYRERAuHR1EJydTLCxTJydEHR0tEREREREQLh0dRCcnUywsUycnRB0dLREREf0ADQ0NJRcYNh8fQiQjQx8fNhcYJA4NDQ0NDiQYFzYfH0MjJEIfHzYXGCQODQ0AAQCrAGsDVQMVAAgAAAEHFyEVIQcXAQIAPO79+QIH7jwBVQMVPO5W7jwBVQACAIAAQAOAA0AAEwAcAAABESERIxEUFhceATMhMjY3PgE1EQU3FwcnNxcRMwMr/apVDA0NHhECVhEeDQ0M/qtuPNXVPG5WAcD+1QEr/tURHg0NDAwNDR4RASsdbjzV1TxuAZ0AAQErAVUC1QIrAAIAAAEXNwEr1dUCK9bWAAAAAAEBlQDrAmsClQACAAABBxcCa9bWApXV1QAAAAABAZUA6wJrApUAAgAAJTcnAZXW1uvV1QABASsBVQLVAisAAgAAATcXASvV1QFV1tYAAAAAAQCJAKIDdwLeAAUAAAEnBxcBJwF3sjzuAgA8ARuyPe4CADwAAQFiAMACngLAAAUAAAEHFwcXAQGePMPDPAEAAsA8xMQ8AQAAAQDVAZUDKwHrAAMAABMhFSHVAlb9qgHrVgAAAAEBAAEiAwACXgAFAAABBycHCQECxMTEPAEAAQACXsPDPP8AAQAAAAADAFUA6wOrApUAKgAuAFoAABM0Njc+ATsBNSMiBgcOAQcOAQcOARUUFhceARceARceATsBNSMiJicuATUXITUhJSMVMzIWFx4BFRQGBw4BKwEVMzI2Nz4BNz4BNz4BNTQmJy4BJy4BJy4BIzGmExQTLxyqqhYpFBMjDg4XCQgJCQgJFw4OIhQTKhaqqhwuFBMUrwFW/qoBgKqqHC4UExQTFBMvHKqqFikUEyMODhcJCAkJCAkXDg4iFBMqFgHAHC4TFBNRCAgJFw4PIhMUKRYWKhMUIg4PFwgICFETExQuHCtWqlETExQvGxwuFBMTUQgICBcPDiIUEyoWFikUEyIPDhcJCAgAAAADAFUAQAOrA0AAIgAmAFMAAAEjFTMyFhceARUUBgcOAQcXPgE3PgE1NCYnLgEnLgEnLgEjByMXMwEXDgEHDgEVFBYXHgEXHgEXHgE7ATUjIiYnLgE1NDY3PgE3FyMVMxcVMxc3AQLVqqocLhQTFA4ODiQVPhoqERARCQgJFw4OIhQTKhYqXlYI/aqFHTASExMJCAkXDg4iFBMqFqqqHC4UExQRERIpGVgfdWFJrDX9NwKVURMTFC4cFykRERcGPg0mGhk4HxYqExQiDg8XCAgIqlYBdYUMJxobPCEWKhMUIg4PFwgICFETExQvGxosExIWAlhWYUmrNgLKAAABAAAAAQAANaOf8V8PPPUACwQAAAAAANodKRUAAAAA2h0pFQAA/+sDxwOVAAAACAACAAAAAAAAAAEAAAPA/8AAAAQAAAAAAAPHAAEAAAAAAAAAAAAAAAAAAAA6BAAAAAAAAAAAAAAAAgAAAAQAAQAEAAA5BAABKQQAAFUEAADVBAAAgAQAAIAEAACABAAAcwQAAKsEAACrBAABYgQAAGsEAADVBAAAVQQAAJcEAAEpBAABYgQAAJMEAACTBAAAgAQAAPcEAACrBAAAjgQAAJMEAAD3BAAAqwQAAOQEAACABAAAgAQAAQAEAADVBAABYgQAAEAEAABVBAAAgAQAAK0EAAA5BAAA1QQAAWIEAABVBAAAVQQAAKsEAACABAABKwQAAZUEAAGVBAABKwQAAIkEAAFiBAAA1QQAAQAEAABVBAAAVQAAAAAACgAUAB4AOgBoAH4A4AD6ATYBbAGiAdgB6gImAjoCggKcA3YEHAQ6BEwFCAWcBbgF0gXoBigGmga0BswHAAcOByYHNAdCB1QHiAgmCJYIugkuCUgJXAnwCsoK4AsSCyALLgs6C0gLWgtsC3oLjgwSDJAAAAABAAAAOgCTAAkAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAADgCuAAEAAAAAAAEABwAAAAEAAAAAAAIABwBgAAEAAAAAAAMABwA2AAEAAAAAAAQABwB1AAEAAAAAAAUACwAVAAEAAAAAAAYABwBLAAEAAAAAAAoAGgCKAAMAAQQJAAEADgAHAAMAAQQJAAIADgBnAAMAAQQJAAMADgA9AAMAAQQJAAQADgB8AAMAAQQJAAUAFgAgAAMAAQQJAAYADgBSAAMAAQQJAAoANACkaWNvbW9vbgBpAGMAbwBtAG8AbwBuVmVyc2lvbiAxLjAAVgBlAHIAcwBpAG8AbgAgADEALgAwaWNvbW9vbgBpAGMAbwBtAG8AbwBuaWNvbW9vbgBpAGMAbwBtAG8AbwBuUmVndWxhcgBSAGUAZwB1AGwAYQByaWNvbW9vbgBpAGMAbwBtAG8AbwBuRm9udCBnZW5lcmF0ZWQgYnkgSWNvTW9vbi4ARgBvAG4AdAAgAGcAZQBuAGUAcgBhAHQAZQBkACAAYgB5ACAASQBjAG8ATQBvAG8AbgAuAAAAAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=='),
+        // Map ag-Grid icon names to the font character codes
+        icons-font-codes:
+        (
+          aggregation: '\e900',
+          arrows: '\e901',
+          asc: '\e902',
+          cancel: '\e903',
+          chart: '\e904',
+          checkbox-checked: '\e905',
+          checkbox-indeterminate: '\e906',
+          checkbox-unchecked: '\e907',
+          color-picker: '\e908',
+          column: '\e909',
+          columns: '\e90a',
+          contracted: '\e90b',
+          copy: '\e90c',
+          cross: '\e90d',
+          cut: '\e90e',
+          data: '\e90f',
+          desc: '\e910',
+          expanded: '\e911',
+          eye-slash: '\e912',
+          eye: '\e913',
+          filter: '\e914',
+          first: '\e915',
+          grip: '\e916',
+          group: '\e917',
+          indeterminate: '\e918',
+          last: '\e919',
+          left: '\e91a',
+          linked: '\e934',
+          loading: '\e91b',
+          maximize: '\e91c',
+          menu: '\e91d',
+          minimize: '\e91e',
+          minus: '\e91f',
+          next: '\e920',
+          none: '\e921',
+          not-allowed: '\e922',
+          paste: '\e923',
+          pin: '\e924',
+          pivot: '\e925',
+          plus: '\e926',
+          previous: '\e927',
+          radio-button-off: '\e928',
+          radio-button-on: '\e929',
+          right: '\e92a',
+          save: '\e92b',
+          small-down: '\e92c',
+          small-left: '\e92d',
+          small-right: '\e92e',
+          small-up: '\e92f',
+          tick: '\e930',
+          tree-closed: '\e931',
+          tree-indeterminate: '\e932',
+          tree-open: '\e933',
+          unlinked: '\e935'
+        )
+      )
+  );
+
+  // hint:
+  // or write CSS selectors to make customisations beyond what the parameters support
+  /* stylelint-enable */
+
+  // Colour of icons used in the grid
+  .ag-icon {
+    color: $white;
+  }
+
+  .ag-header {
+    margin-bottom: 8px;
+    border-bottom: 0;
+  }
+
+  .ag-header-row {
+    font-size: 13px;
+  }
+
+  .ag-header-row:not(:first-child) .ag-header-cell {
+    border-top: 1px solid $lightgrey-sf-d3;
+  }
+
+  .ag-header-cell-text {
+    color: $white;
+  }
+
+  .ag-input-wrapper .ag-input-field-input,
+  .ag-date-filter .ag-input-field-input {
+    background-color: $white;
+  }
+
+  .ag-floating-filter-input {
+    background-color: $white;
+  }
+
+  .ag-floating-filter-body {
+    height: auto;
+  }
+
+  input[class^='ag-'][type='text'] {
+    height: var(--grid-header-input-height);
+    padding-bottom: 0;
+    padding-top: 0;
+    border-bottom: 0;
+  }
+
+  input[class^='ag-'][type='text']:disabled {
+    border-bottom-width: 0;
+  }
+
+  input[class^='ag-'][type='date'] {
+    height: var(--grid-header-input-height);
+    padding-bottom: 0;
+    padding-top: 0;
+    border-bottom: 0;
+  }
+
+  .ag-set-filter-select-all {
+    margin-bottom: 0;
+    border-bottom: 0;
+  }
+
+  .ag-popup-child {
+    min-width: 250px;
+  }
+
+  .ag-row {
+    background: linear-gradient(180deg, $snow 7.29%, $white 100%);
+    box-shadow: inset 0 -1px 0 $gainsboro;
+    border-radius: 32px;
+    border-top: $white 4px solid;
+    border-bottom: $white 4px solid;
+    &:hover {
+      background: linear-gradient(180deg, $snow 7.29%, $lightgrey-sf 100%);
+    }
+  }
+
+  .ag-center-cols-viewport {
+    overflow: hidden;
+  }
+
+  .ag-cell {
+    font-weight: 700;
+  }
+
+  /* stylelint-disable */
+  div.ag-ltr div.ag-row div.ag-cell-focus[col-id='action'] {
+    border: 0;
+  }
+
+  .ag-cell-focus[col-id='action'] a:active {
+    border: none;
+  }
+
+  .ag-cell div.double-spaced-cell-first-row {
+    font-size: 14px;
+    line-height: 18px;
+    margin-top: 5px;
+  }
+
+  .ag-cell div.double-spaced-cell-second-row {
+    font-size: 14px;
+    line-height: 18px;
+  }
+
+  .ag-cell.alert-marker {
+    display: flex;
+    padding-top: 4px;
+    padding-bottom: 4px;
+
+    span {
+      align-self: center;
+    }
+  }
+
+  .ag-cell.alert-marker::before {
+    border-left: 2px solid $alert-red;
+    height: 100%;
+    margin-right: 12px;
+    margin-left: -15px;
+    align-self: center;
+    content: '';
+  }
+
+  /* limit height of rich select cell editor and add vertical scrollbar if needed */
+  .ag-rich-select {
+    max-height: 550px;
+    overflow-y: auto;
+  }
+}
+
+.ag-theme-material .ag-ltr .ag-has-focus .ag-cell-focus:not(.ag-cell-range-selected),
+.ag-theme-material .ag-ltr .ag-context-menu-open .ag-cell-focus:not(.ag-cell-range-selected),
+.ag-theme-material .ag-ltr .ag-has-focus .ag-full-width-row.ag-row-focus .ag-cell-wrapper.ag-row-group,
+.ag-theme-material .ag-ltr .ag-cell-range-single-cell,
+.ag-theme-material .ag-ltr .ag-cell-range-single-cell.ag-cell-range-handle,
+.ag-theme-material .ag-rtl .ag-has-focus .ag-cell-focus:not(.ag-cell-range-selected),
+.ag-theme-material .ag-rtl .ag-context-menu-open .ag-cell-focus:not(.ag-cell-range-selected),
+.ag-theme-material .ag-rtl .ag-has-focus .ag-full-width-row.ag-row-focus .ag-cell-wrapper.ag-row-group,
+.ag-theme-material .ag-rtl .ag-cell-range-single-cell,
+.ag-theme-material .ag-rtl .ag-cell-range-single-cell.ag-cell-range-handle {
+  border: none;
+  outline: none;
+}

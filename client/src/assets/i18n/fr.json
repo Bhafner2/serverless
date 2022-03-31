@@ -1,0 +1,16 @@
+{
+  "test-message": "Missing value for 'test-message'",
+
+  "animal.statsTitle.GruppenDurchschnitt": "Gruppen Durchschnitt aus MLP (FR)",
+  "animal.stats.Milchleistung": "Production de lait",
+  "animal.stats.Milchfett": "Matière grasse du lait",
+  "animal.stats.Milcheiweissgehalt": "Teneur en protéines du lait",
+  "animal.stats.Gewicht": "Poids",
+  "animal.stats.Milchlaktose": "Lactose du lait",
+  "animal.stats.Harnstoffgehalt": "Teneur en urée",
+
+  "unit.kg/Tg": "kg/jour",
+  "unit.percentage": "%",
+  "unit.kg": "kg",
+  "unit.mg/dl": "mg/dl"
+}

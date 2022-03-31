@@ -1,0 +1,48 @@
+<div class="table-header">
+  <div class="table-header__title" *ngIf="config.title">
+    {{ config.title | transloco }}
+  </div>
+  <div class="table-header__rows-count" *ngIf="config?.rowsCountIndicator?.showCount">
+    <ng-container *ngIf="config?.rowsCountIndicator?.itemsLabel">
+      {{ config.rowsCountIndicator.itemsLabel | transloco }}</ng-container
+    >
+    <ng-container *ngIf="data && data?.length"> {{ data.length }}</ng-container>
+  </div>
+</div>
+
+<div class="global-search" *ngIf="config.globalSearch?.showField">
+  <div class="global-search__title" *ngIf="config.globalSearch?.title">
+    {{ config.globalSearch.title | transloco }}
+  </div>
+  <div class="global-search__field">
+    <input
+      id="table-dialog-global-search"
+      [(ngModel)]="globalSearchTerm"
+      [placeholder]="config.globalSearch?.placeholder || '' | transloco"
+      (ngModelChange)="onChangeGlobalSearchTermEvent()"
+      (change)="onChangeGlobalSearchTermEvent()"
+      type="text"
+      class="form-control white-bg"
+    />
+    <span class="ico-search"></span>
+  </div>
+</div>
+<ag-grid-angular
+  class="ag-theme-material"
+  [columnDefs]="tableColumnDefs"
+  [rowData]="rowData"
+  [defaultColDef]="defaultColDef"
+  [rowSelection]="rowSelection"
+  [rowMultiSelectWithClick]="rowMultiSelectWithClick"
+  [suppressRowClickSelection]="suppressRowClickSelection"
+  [frameworkComponents]="frameworkComponents"
+  (gridReady)="onGridReady($event)"
+  (selectionChanged)="onSelectionChanged($event)"
+  (rowDataChanged)="onRowDataChanged($event)"
+></ag-grid-angular>
+<div class="add-entry" *ngIf="config.addNewEntry">
+  <button (click)="addEntryClick()" class="btn btn-secondary add-entry__button">
+    <span class="{{ config.addNewEntry?.icon || 'ico-circle_plus' }} add-entry__button-icon"></span>
+    <span class="add-entry__button-text">{{ config.addNewEntry.buttonLabel | transloco }}</span>
+  </button>
+</div>

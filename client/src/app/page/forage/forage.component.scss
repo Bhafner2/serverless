@@ -1,0 +1,8 @@
+@import 'styles/abstract/colors';
+
+:host {
+  flex-direction: column;
+  overflow: hidden;
+  display: flex;
+  flex: 1;
+}

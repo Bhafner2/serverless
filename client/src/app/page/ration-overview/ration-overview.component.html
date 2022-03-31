@@ -1,0 +1,24 @@
+<section class="section">
+  <div class="col col--60 flex-height">
+    <div class="col-content">
+      <div class="content-header">
+        <div class="title-bg">
+          <div class="title">{{ 'greeting1' | transloco }} {{ (companyBranch | async)?.name }}</div>
+          <div class="subtitle">{{ 'greeting2' | transloco }}</div>
+        </div>
+        <object class="guy" data="assets/img/guy.svg" width="200" height="200"></object>
+      </div>
+      <app-grid-table
+        *ngIf="animalGroups"
+        [data]="animalGroups"
+        [columnDefs]="animalGroupsTableColumnDefs"
+        [config]="animalGroupsTableConfig"
+        (actionRow)="onAnimalGroupsActionRow($event)"
+      >
+      </app-grid-table>
+    </div>
+  </div>
+  <div class="col col--40 flex-height">
+    <div class="col-content">ration-overview content 2</div>
+  </div>
+</section>

@@ -1,0 +1,72 @@
+{
+  "navigation.ration-overview": "Rationen Übersicht",
+  "navigation.animal-group": "Fütterungsgruppen",
+  "navigation.balance": "Ausbalancieren",
+  "navigation.forage": "Futtermittel",
+
+  "greeting1": "Hallo",
+  "greeting2": "Schön, dass du hier wieder Rationenplanung machst.",
+  "my-animal-groups": "Meine Fütterungsgruppen",
+
+  "futterplan": "Futterplan",
+  "animal.statsTitle.GruppenDurchschnitt": "Gruppen Durchschnitt aus MLP",
+  "animal.stats.Milchleistung": "Milchleistung",
+  "animal.stats.Milchfett": "Milchfett",
+  "animal.stats.Milcheiweissgehalt": "Milcheiweissgehalt",
+  "animal.stats.Gewicht": "Gewicht",
+  "animal.stats.Milchlaktose": "Milchlaktose",
+  "animal.stats.Harnstoffgehalt": "Harnstoffgehalt",
+
+  "table.stats.comments": "Kommentar",
+  "table.forageOnLocation.title": "Futter auf dem Hof",
+  "button.edit.label": "Bearbeiten",
+  "button.addForage.label": "Futter hinzufügen",
+
+  "unit.kg/Tg": "kg/Tg",
+  "unit.percentage": "%",
+  "unit.kg": "kg",
+  "unit.mg/dl": "mg/dl",
+
+  "overview": "Übersicht",
+  "detail": "Detail",
+  "name": "Name",
+  "delete": "Löschen",
+  "no-data": "Keine Daten vorhanden...",
+  "amount": "Menge",
+  "edit": "Bearbeiten",
+  "pdf": "PDF",
+  "table.column.forage": "Futtermittel",
+  "table.column.favourite": "Favorit",
+
+  "animal": "Tiere",
+  "animal.add": "Tiere hinzufügen",
+  "animal.ml": "ML",
+  "animal.ltg": "LTg",
+  "animal.lnr": "LNr",
+  "animal.has": "HaS",
+  "animal.kd": "KD",
+  "animal.breed": "Rasse",
+  "animal.amount": "Tieranzahl",
+  "animal.select": "Tier auswählen",
+  "animal.all-my-animals": "Alle meine Tiere",
+  "animal.search": "Tiernamen, TVD-Nr., Rasse, Futtergruppe",
+
+  "animal-group": "Futtergruppe",
+  "animal-group.add": "Futtergruppe hinzufügen",
+
+  "dialog.loading.pleaseWait": "Bitte warten Sie einen kurzen Moment...",
+  "dialog.loading.requestBeingProcessed": "Ihre Anfrage wird bearbeitet",
+  "dialog.button.cancel": "Abbrechen",
+  "dialog.button.close": "Schliessen",
+  "dialog.button.accept": "Bestätigen",
+  "dialog.button.save": "Speichern",
+  "dialog.selectForage.title": "Futter auswählen",
+  "dialog.selectForage.searchTitle": "Alle möglichen Futter",
+  "dialog.selectForage.searchPlaceholder": "z.B: Futtermittel, Futtername, Hersteller",
+
+  "MINERAL_FEED": "Mineralfutter",
+  "SPECIAL_FEED": "Spezialfutter",
+  "CONCENTRATED_FEED": "Kraftfutter",
+
+  "ration": "Ration"
+}

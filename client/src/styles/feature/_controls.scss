@@ -1,0 +1,12 @@
+input[type='radio'],
+input[type='checkbox'] {
+  cursor: pointer;
+
+  + label {
+    cursor: pointer;
+  }
+}
+
+textarea {
+  resize: both;
+}

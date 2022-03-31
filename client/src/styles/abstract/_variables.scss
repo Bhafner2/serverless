@@ -1,0 +1,17 @@
+@import 'theme.mixin';
+
+/**
+ * Theme variables for SmartFarming style.
+ */
+.sf,
+[data-theme='sf'] {
+  @include theme-sf();
+}
+
+$font-family-base: Roboto, $font-family-sans-serif;
+
+$screen-break-size: 1150px;
+$app-spacing-x: 30px;
+$app-spacing-y: 40px;
+$navigation-height: 43px;
+$table-line-height: 72px;

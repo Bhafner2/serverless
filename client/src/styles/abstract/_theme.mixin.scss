@@ -1,0 +1,49 @@
+@import '~css-vars/css-vars';
+@import '~@biskin-kit/core/src/lib/assets/scss/biskin/colors';
+@import '~@biskin-kit/core/src/lib/assets/scss/biskin/variables';
+@import 'colors';
+@import '../layout/navigation';
+
+$css-vars-use-native: true;
+$css-vars-debug-log: false;
+
+@mixin theme-sf() {
+  // color definitions
+  --theme-link-color: #{$trolley-grey};
+  --theme-link-color--active: #{$outer-space};
+  --theme-link-color--active-underline: #{$yellow-sf};
+
+  --theme-primary-color: #{$yellow-sf};
+
+  --theme-input-label-color: #{$yellow-sf};
+  --theme-input-focus-border-color: #{$yellow-sf};
+  --theme-input-border-color: #{$trolley-grey};
+  --theme-input-bg: #{$trolley-grey};
+
+  --theme-text-color: #{$outer-space};
+
+  --theme-grid-color--header: #{$lightgrey-sf-d1};
+  --theme-grid-color--lines: #{$lightgrey-d2};
+  --theme-grid-color--background: #{$white};
+
+  --theme-legend-color--1: #{$legend-blue};
+  --theme-legend-color--2: #{$legend-red};
+  --theme-legend-color--3: #{$legend-green};
+  --theme-legend-color--4: #{$legend-yellow};
+
+  --custom-select-icon: #{url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='4' height='5' viewBox='0 0 4 5'%3e%3cpath fill='%237b7b7b' d='M2 0L0 2h0zm0 5L0 3h4z'/%3e%3c/svg%3e")};
+
+  // dimensions
+  --sidenav-header-height: 43px;
+  --sidenav-width: 280px;
+
+  --crop-list-width: 161px;
+  --crop-plan-list-width: 201px;
+  --nav-link-small-width: 131px;
+  --nav-line-height: 54px;
+
+  --grid-header-input-height: 30px;
+
+  --month-splits: 5;
+  --border: #{$border};
+}

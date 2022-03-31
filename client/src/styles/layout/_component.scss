@@ -1,0 +1,94 @@
+@import '~@biskin-kit/core/src/lib/assets/scss/biskin/colors';
+@import 'styles/abstract/colors';
+@import 'styles/abstract/variables';
+
+.app {
+  display: grid;
+  grid-template-rows: $navigation-height 1fr;
+  width: 100%;
+  height: 100%;
+  overflow-x: auto;
+}
+
+.navigation {
+  display: block;
+  height: $navigation-height;
+  padding: 0 16px;
+}
+
+.content {
+  display: block;
+
+  background-color: $lightgrey-sf;
+  padding: $app-spacing-y $app-spacing-x;
+}
+
+.section {
+  display: flex;
+  flex: 1;
+  width: 100%;
+  flex-wrap: wrap-reverse;
+  align-items: stretch;
+  margin: 0 auto;
+}
+
+.flex-height {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  overflow: hidden;
+}
+
+.flex-width {
+  display: flex;
+  flex-direction: row;
+  flex: 1;
+}
+
+.col {
+  padding: 0;
+}
+
+.col-content {
+  flex: 1;
+  padding: 20px;
+  background-color: $white;
+
+  display: flex;
+  flex-direction: column;
+
+  &--light {
+    background-color: $background-light;
+  }
+}
+
+@media screen and (max-width: $screen-break-size) {
+  .section .col:last-child {
+    .col-content {
+      margin-bottom: 30px;
+    }
+  }
+  .col {
+    min-width: 100%;
+  }
+}
+
+@media screen and (min-width: $screen-break-size + 1) {
+  .section .col:first-child {
+    .col-content {
+      margin-right: 30px;
+    }
+  }
+
+  .col--60 {
+    min-width: 60%;
+  }
+
+  .col--40 {
+    min-width: 40%;
+  }
+
+  .content {
+    display: flex;
+  }
+}

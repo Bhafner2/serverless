@@ -1,0 +1,77 @@
+@import './styles/abstract/colors';
+
+$table-border-color: #e6e6e6;
+.app-stats-table {
+  .stats {
+    &-info-group {
+      margin-bottom: 20px;
+    }
+    &-header {
+      font-size: 39px;
+      font-weight: 900;
+      margin-bottom: 14px;
+      color: $text-black;
+    }
+    &-title {
+      font-weight: 900;
+      color: $text-300;
+      padding-left: 10px;
+      padding-bottom: 6px;
+      padding-top: 6px;
+    }
+    &-paragraph {
+      font-weight: 400;
+      font-size: 15px;
+      line-height: 18px;
+    }
+    &-buttons-group {
+      text-align: center;
+    }
+  }
+
+  .btn-list {
+    border: 1px solid $secondary-dark;
+    height: 32px;
+    border-radius: 50px;
+
+    font-size: 15px;
+    color: $secondary-dark;
+    font-weight: 400;
+    line-height: 16px;
+    &:hover {
+      background-color: var(--theme-primary-color-d1);
+    }
+  }
+
+  .stats-table {
+    display: grid;
+    grid-template-columns: auto auto auto;
+
+    &--1-columns {
+      grid-template-columns: auto;
+    }
+    &--2-columns {
+      grid-template-columns: auto auto;
+    }
+    &--3-columns {
+      grid-template-columns: auto auto auto;
+    }
+    &--4-columns {
+      grid-template-columns: auto auto auto auto;
+    }
+    &--5-columns {
+      grid-template-columns: auto auto auto auto auto;
+    }
+
+    &__cell {
+      padding: 3px 6px 9px;
+      margin: 2px;
+      background-color: $grey-white;
+    }
+    &__cell-title {
+      font-size: 15px;
+      font-weight: 400;
+      color: $text-300;
+    }
+  }
+}

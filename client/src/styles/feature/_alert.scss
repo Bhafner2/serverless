@@ -1,0 +1,13 @@
+@import './../abstract/colors';
+
+.alert-danger {
+  border: 0;
+  background-color: transparent;
+  padding: 0;
+  font-size: 14px;
+  color: $alert-red;
+}
+
+.pl-25 {
+  padding-left: 25%;
+}

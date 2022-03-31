@@ -1,0 +1,11 @@
+{
+  "fileServerFolder": ".",
+  "fixturesFolder": "./cypress/fixtures",
+  "integrationFolder": "./cypress/integration",
+  "pluginsFile": "./cypress/plugins/index",
+  "supportFile": false,
+  "video": true,
+  "videosFolder": "./dist/cypress/test-e2e/videos",
+  "screenshotsFolder": "./dist/cypress/test-e2e/screenshots",
+  "chromeWebSecurity": false
+}

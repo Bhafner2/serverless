@@ -1,0 +1,107 @@
+@import 'styles/abstract/colors';
+
+.app-grid-table {
+  display: contents;
+
+  ag-grid-angular {
+    display: block;
+    height: 100%;
+    min-height: 280px;
+    .ag-row-selected > div {
+      background-color: $action-hover;
+    }
+  }
+  .ag-checkbox-input-wrapper {
+    box-shadow: none !important;
+    input {
+      width: 25px;
+      height: 25px;
+    }
+    &.ag-checked::after {
+      content: '\e99e';
+      font-family: 'biskicon';
+      font-size: 27px;
+    }
+    &::after {
+      content: '\e997';
+      font-family: 'biskicon';
+      font-size: 27px;
+    }
+  }
+  .table-header {
+    display: flex;
+    flex-direction: row;
+    padding-bottom: 12px;
+    &__title {
+      font-weight: 900;
+      font-size: 24px;
+      color: $text-secondary;
+    }
+    &__rows-count {
+      text-align: right;
+      flex: 1;
+      align-self: flex-end;
+
+      font-weight: 600;
+      font-size: 13px;
+      color: $text-secondary;
+    }
+  }
+
+  .add-entry {
+    margin-top: 16px;
+    &__button {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 40px;
+
+      background: $secondary-main;
+
+      border: 2px solid $secondary-dark;
+      box-sizing: border-box;
+      border-radius: 3px;
+      margin: 0 auto;
+      &-text {
+        font-size: 16px;
+        color: $secondary-contrast;
+      }
+      &-icon {
+        color: $secondary-contrast;
+        font-size: 20px;
+        padding-right: 5px;
+      }
+    }
+  }
+  .global-search {
+    text-align: center;
+    &__title {
+      font-weight: 900;
+      font-size: 16px;
+    }
+    &__field {
+      max-width: 330px;
+      position: relative;
+      margin: 0 auto;
+      text-align: center;
+      span {
+        position: absolute;
+        right: 12px;
+        top: 6px;
+        font-size: 24px;
+      }
+      input {
+        margin: 14px 0 24px;
+        padding: 4px 35px 4px 14px;
+        background-color: $secondary-contrast;
+        height: 36px;
+        border-radius: 18px;
+      }
+      input::placeholder {
+        color: $trolley-grey;
+        font-size: 15px;
+        font-weight: 400;
+      }
+    }
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "npmScope": "workspace",
+  "implicitDependencies": {
+    "angular.json": "*",
+    "package.json": "*",
+    "tsconfig.json": "*",
+    "nx.json": "*"
+  },
+  "projects": {
+    "futterplan": {
+      "tags": []
+    }
+  }
+}

@@ -1,0 +1,50 @@
+<div class="flex-width">
+  <ul class="nav nav-pills nav-left" role="tablist">
+    <li class="nav-item h2 fontsize-17">
+      <a class="nav-link" routerLink="/ration-overview" routerLinkActive="active" role="tab">
+        {{ 'navigation.ration-overview' | transloco }}
+      </a>
+    </li>
+    <li class="nav-item h2 fontsize-17">
+      <a
+        class="nav-link"
+        routerLink="/animal-group/"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{
+          exact: false
+        }"
+        role="tab"
+      >
+        {{ 'navigation.animal-group' | transloco }}
+      </a>
+    </li>
+    <li class="nav-item h2 fontsize-17">
+      <a class="nav-link" routerLink="/balance" routerLinkActive="active" role="tab">
+        {{ 'navigation.balance' | transloco }}
+      </a>
+    </li>
+    <li class="nav-item h2 fontsize-17">
+      <a class="nav-link" routerLink="/forage" routerLinkActive="active" role="tab">
+        {{ 'navigation.forage' | transloco }}
+      </a>
+    </li>
+  </ul>
+  <!--  icons-->
+  <ul class="nav nav-pills nav-right" role="tablist">
+    <li class="nav-item h2 fontsize-17">
+      <a class="nav-link" routerLink="/help" routerLinkActive="active" role="tab">
+        <span class="nav-icon ico-circlefull_help"></span>
+      </a>
+    </li>
+    <li class="nav-item h2 fontsize-17">
+      <a class="nav-link" routerLink="/message" routerLinkActive="active" role="tab">
+        <span class="nav-icon ico-bell"></span>
+      </a>
+    </li>
+    <li class="nav-item h2 fontsize-17">
+      <a class="nav-link" routerLink="/settings" routerLinkActive="active" role="tab">
+        <span class="nav-icon ico-nav_settings"></span>
+      </a>
+    </li>
+  </ul>
+</div>

@@ -1,0 +1,15 @@
+@import './styles/abstract/colors';
+.frame {
+  background: $background-light;
+  box-shadow: -4px 0 4px 0 rgba(51, 38, 1, 0.1);
+  border-radius: 16px 32px 32px 16px;
+  width: 50px;
+  margin-left: -10px;
+  cursor: pointer;
+}
+
+.arrow {
+  font-size: 24px;
+  color: $yellow-sf;
+  padding-left: 3px;
+}

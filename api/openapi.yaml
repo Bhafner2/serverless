@@ -1,0 +1,376 @@
+openapi: 3.0.0
+servers:
+  - url: /rest
+info:
+  version: "1.0"
+  title: Futterplan - Open API
+  description: API for the Futterplan.
+tags:
+  - name: futterplan
+paths:
+  /animals:
+    get:
+      description: Get animals
+      operationId: get_animals
+      tags:
+        - animal
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/AnimalDto"
+        "404":
+          description: Not found
+  /animals/{id}:
+    get:
+      description: Get animals id
+      operationId: get_animals_by_id
+      tags:
+        - animal
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/AnimalDto"
+        "404":
+          description: Not found
+    post:
+      description: post animal
+      operationId: post_animal_with_id
+      tags:
+        - animal
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/AnimalDto"
+        required: true
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/AnimalDto"
+        "404":
+          description: Not found
+  /animal-groups:
+    get:
+      description: Get animal-groups
+      operationId: get_animal-groups
+      tags:
+        - animal-group
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/AnimalGroupDto"
+        "404":
+          description: Not found
+  /animal-groups/{id}:
+    get:
+      description: Get animal-groups id
+      operationId: get_animal-groups_by_id
+      tags:
+        - animal-group
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/AnimalGroupDto"
+        "404":
+          description: Not found
+    post:
+      description: post animal-group
+      operationId: post_animal-groups_with_id
+      tags:
+        - animal-group
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/AnimalGroupDto"
+        required: true
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/AnimalGroupDto"
+        "404":
+          description: Not found
+  /company-branch:
+    get:
+      description: Get company-branch
+      operationId: get_company-branch
+      tags:
+        - company-branch company
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/CompanyBranchDto"
+        "404":
+          description: Not found
+  /forages:
+    get:
+      description: Get forages
+      operationId: get_forages
+      tags:
+        - forage
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/ForageDto"
+        "404":
+          description: Not found
+  /forages/on-location:
+    get:
+      description: Get forages on location
+      operationId: get_forages_on_location
+      tags:
+        - forage
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/ForageDto"
+        "404":
+          description: Not found
+    post:
+      description: post forages on location
+      operationId: post_forage_on_location
+      tags:
+        - forage
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                $ref: "#/components/schemas/ForageDto"
+        required: true
+      responses:
+        "200":
+          description: OK
+        "404":
+          description: Not found
+components:
+  schemas:
+    AnimalBreedDto:
+      type: object
+      properties:
+        id:
+          type: integer
+        name:
+          type: string
+    AnimalCategoryDto:
+      type: object
+      properties:
+        id:
+          type: integer
+        name:
+          type: string
+    CalvingDto:
+      type: object
+      properties:
+        birthdate:
+          type: string
+        lactoseNo:
+          type: integer
+        testno:
+          type: integer
+        testdate:
+          type: string
+        milk:
+          type: number
+        fat:
+          type: number
+        protein:
+          type: number
+        lactose:
+          type: number
+        persistence:
+          type: number
+        cellno:
+          type: integer
+        urea:
+          type: integer
+    MilkPerformanceDataDto:
+      type: object
+      properties:
+        date:
+          type: string
+        laktoseNo:
+          type: integer
+        laktoseTage:
+          type: integer
+        milchMorgen:
+          type: number
+        milchAbend:
+          type: number
+        fett:
+          type: number
+        laktose:
+          type: number
+        eiweiss:
+          type: number
+        feq:
+          type: number
+        harnstoff:
+          type: integer
+        zellzahl:
+          type: integer
+        laufendTage:
+          type: integer
+        laufendMilch:
+          type: integer
+        laufendFett:
+          type: number
+        laufendEiweiss:
+          type: number
+        zzPers:
+          type: integer
+    ForageDto:
+      type: object
+      properties:
+        id:
+          type: integer
+        name:
+          type: string
+        producerName:
+          type: string
+        forageType:
+          type: string
+          enum: ["CONCENTRATED_FEED", "MINERAL_FEED", "SPECIAL_FEED"]
+      required:
+        - id
+        - name
+        - forageType
+    AnimalDto:
+      type: object
+      properties:
+        id:
+          type: integer
+        name:
+          type: string
+        tvdNr:
+          type: string
+        animalBreed:
+          $ref: "#/components/schemas/AnimalBreedDto"
+        animalGroup:
+          $ref: "#/components/schemas/AnimalGroupShortDto"
+        animalCategory:
+          $ref: "#/components/schemas/AnimalCategoryDto"
+        calvings:
+          type: array
+          items:
+            $ref: "#/components/schemas/CalvingDto"
+        milkPerformanceData:
+          type: array
+          items:
+            $ref: "#/components/schemas/MilkPerformanceDataDto"
+      required:
+        - id
+        - name
+    AnimalGroupShortDto:
+      type: object
+      properties:
+        id:
+          type: integer
+        name:
+          type: string
+        comment:
+          type: string
+    AnimalGroupDto:
+      type: object
+      properties:
+        id:
+          type: integer
+          description: primary key
+          example: 1000
+        name:
+          type: string
+          description: Name of Animalgroup
+          example: Herde Mutterkühe
+        comment:
+          type: string
+        animals:
+          type: array
+          items:
+            $ref: "#/components/schemas/AnimalDto"
+    CompanyBranchDto:
+      type: object
+      properties:
+        id:
+          type: integer
+        farmNetCompanyId:
+          type: string
+        name:
+          type: string
+        farmType:
+          type: string
+          enum:
+            - EGOLOGICAL
+            - CONVENTIONAL
+    GeneralError:
+      type: object
+      properties:
+        correlationId:
+          type: string
+          format: uuid
+          example: 73eaf474-338d-4684-b8f7-ee45617a13a3
+        message:
+          type: string
+          example: An unexpected error occured. Please contact support.
+      required:
+        - correlationId
+        - message

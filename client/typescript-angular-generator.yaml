@@ -1,0 +1,13 @@
+# global settings
+# https://openapi-generator.tech/docs/globals
+globalProperties:
+  debugOpenAPI: false
+  modelDocs: false
+  apiDocs: false
+  modelTests: false
+  interfaceOnly: true
+
+additionalProperties:
+  serviceFileSuffix: -rest.service
+  serviceSuffix: RestService
+  fileNaming: kebab-case

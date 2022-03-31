@@ -1,0 +1,23 @@
+<div *ngIf="config.header" class="stats-header">{{ config.header | transloco }}</div>
+
+<div class="stats-info-group">
+  <div *ngIf="config.title" class="stats-title">{{ config.title | transloco }}</div>
+  <div class="stats-table stats-table--{{ config.columns }}-columns">
+    <div class="stats-table__cell" *ngFor="let item of items">
+      <div class="stats-table__cell-title">
+        {{ item.title | transloco }}
+      </div>
+      <div class="stats-table__cell-value">{{ item.value }} {{ item.unit ? (item.unit | transloco) : '' }}</div>
+    </div>
+  </div>
+</div>
+
+<div *ngIf="config.comment" class="stats-info-group">
+  <div class="stats-title">{{ 'table.stats.comments' | transloco }}</div>
+  <div class="stats-paragraph">{{ config.comment }}</div>
+</div>
+<div *ngIf="config.isEditable" class="stats-buttons-group">
+  <div (click)="clickEdit.emit()" type="button" class="btn btn-outline-primary btn-list">
+    {{ 'button.edit.label' | transloco }}
+  </div>
+</div>

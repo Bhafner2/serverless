@@ -1,0 +1,17 @@
+<section class="section">
+  <div class="col col--60 flex-height">
+    <div class="col-content">
+      <app-grid-table
+        *ngIf="foragesOnLocation"
+        [data]="foragesOnLocation"
+        [columnDefs]="forageOnLocationTableColumnDefs"
+        [config]="forageOnLocationTableConfig"
+        (actionRow)="onForageOnLocationActionRow($event)"
+      >
+      </app-grid-table>
+    </div>
+  </div>
+  <div class="col col--40 flex-height">
+    <div class="col-content">forage content 2</div>
+  </div>
+</section>

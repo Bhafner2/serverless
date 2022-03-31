@@ -1,0 +1,12 @@
+@import './styles/abstract/colors';
+.text {
+  font-weight: 900;
+  font-size: 18px;
+  line-height: 22px;
+}
+.sub-text {
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 18px;
+  color: $text-placeholder;
+}
